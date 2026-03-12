@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "GrindSmartApp"
 include(":app")
- 
+include(":app:grindsmart")
