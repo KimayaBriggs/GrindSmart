@@ -17,11 +17,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Connect buttons to XML
         startButton = findViewById(R.id.startButton);
         returnButton = findViewById(R.id.returnButton);
 
-        // NEW USER → Open Survey
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // RETURNING USER → Open Dashboard
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

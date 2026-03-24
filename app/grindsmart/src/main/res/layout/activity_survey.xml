@@ -1,174 +1,160 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:padding="20dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:text="Lets begin with a short survey..."
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/nameInput"
+            android:hint="Enter your name"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:text="Where do you usually study?"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/deskCheck"
+            android:text="At a desk in a quiet room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/bedCheck"
+            android:text="On my bed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/sharedCheck"
+            android:text="Shared space (living room/kitchen)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/libraryCheck"
+            android:text="School or library"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+<!--        //Ques 5-->
+
+        <TextView
+            android:text="What distracts you the most?"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/phoneCheck"
+            android:text="Phone / social media"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/friendsCheck"
+            android:text="Friends / texting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/gamesCheck"
+            android:text="Video games"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/noiseCheck"
+            android:text="Noise around me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Question 7 -->
+
+        <TextView
+            android:text="When are you most productive?"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:id="@+id/productiveGroup"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <!-- Question 4 -->
+            <RadioButton
+                android:id="@+id/morning"
+                android:text="Early Morning"/>
 
-            <TextView
-                android:text="Where do you usually study?"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+            <RadioButton
+                android:id="@+id/afternoon"
+                android:text="Afternoon"/>
 
-            <CheckBox
-                android:id="@+id/q4_desk"
-                android:text="At a desk in a quiet room"/>
-            <CheckBox android:id="@+id/q4_bed"
-                android:text="On my bed"/>
-            <CheckBox android:id="@+id/q4_shared"
-                android:text="Shared/common space"/>
-            <CheckBox android:id="@+id/q4_library"
-                android:text="School or library"/>
-            <CheckBox android:id="@+id/q4_music"
-                android:text="With music playing"/>
-            <CheckBox android:id="@+id/q4_tv"
-                android:text="With TV on"/>
-            <CheckBox android:id="@+id/q4_phone"
-                android:text="While on my phone"/>
-            <CheckBox android:id="@+id/q4_none"
-                android:text="No consistent study space"/>
+            <RadioButton
+                android:id="@+id/evening"
+                android:text="Evening"/>
 
-            <!-- Question 5 -->
+            <RadioButton
+                android:id="@+id/night"
+                android:text="Late Night"/>
 
-            <TextView
-                android:text="What distracts you most while studying?"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
+        </RadioGroup>
 
-            <CheckBox android:id="@+id/q5_phone"
-                android:text="Phone / social media"/>
+        <!-- Question 9 -->
 
-            <CheckBox android:id="@+id/q5_friends"
-                android:text="Friends texting or calling"/>
+        <TextView
+            android:text="How long can you focus?"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-            <CheckBox android:id="@+id/q5_games"
-                android:text="Video games"/>
+        <Spinner
+            android:id="@+id/focusSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-            <CheckBox android:id="@+id/q5_noise"
-                android:text="Noise around me"/>
+        <!-- Hardest Sub -->
 
-            <CheckBox android:id="@+id/q5_thoughts"
-                android:text="My own thoughts / daydreaming"/>
+        <TextView
+            android:text="Hardest Subject"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-            <CheckBox android:id="@+id/q5_bored"
-                android:text="I get bored easily"/>
+        <EditText
+            android:id="@+id/subjectInput"
+            android:hint="Example: Math"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-            <CheckBox android:id="@+id/q5_none"
-                android:text="I don't usually get distracted"/>
+        <Button
+            android:id="@+id/submitSurvey"
+            android:text="Submit Survey"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/mainButtonColor"/>
 
-            <!-- Question 6 -->
-
-            <TextView
-                android:text="How do you usually study?"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
-
-            <CheckBox android:id="@+id/q6_notes"
-                android:text="Rereading notes"/>
-
-            <CheckBox android:id="@+id/q6_highlight"
-                android:text="Highlighting"/>
-
-            <CheckBox android:id="@+id/q6_flashcards"
-                android:text="Flashcards"/>
-
-            <CheckBox android:id="@+id/q6_videos"
-                android:text="Watching videos"/>
-
-            <CheckBox android:id="@+id/q6_practice"
-                android:text="Practice problems"/>
-
-            <CheckBox android:id="@+id/q6_none"
-                android:text="No real study method"/>
-
-            <!-- Question 7 -->
-
-            <TextView
-                android:text="When are you most productive?"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
-
-            <RadioGroup android:id="@+id/productiveGroup">
-
-                <RadioButton android:id="@+id/q7_morning" android:text="Early morning"/>
-                <RadioButton android:id="@+id/q7_afternoon" android:text="Afternoon"/>
-                <RadioButton android:id="@+id/q7_evening" android:text="Evening"/>
-                <RadioButton android:id="@+id/q7_night" android:text="Late night"/>
-                <RadioButton android:id="@+id/q7_depends" android:text="It depends"/>
-
-            </RadioGroup>
-
-            <!-- Question 8 -->
-
-            <TextView
-                android:text="Biggest study struggle?"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
-
-            <RadioGroup android:id="@+id/struggleGroup">
-
-                <RadioButton android:text="Procrastination"/>
-                <RadioButton android:text="Not knowing where to start"/>
-                <RadioButton android:text="Forgetting material"/>
-                <RadioButton android:text="Test anxiety"/>
-                <RadioButton android:text="Staying focused"/>
-                <RadioButton android:text="Managing time"/>
-
-            </RadioGroup>
-
-            <!-- Question 9 -->
-
-            <TextView
-                android:text="How long can you focus?"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
-
-            <RadioGroup android:id="@+id/focusGroup">
-
-                <RadioButton android:text="10–15 minutes"/>
-                <RadioButton android:text="20–30 minutes"/>
-                <RadioButton android:text="45–60 minutes"/>
-                <RadioButton android:text="Over an hour"/>
-
-            </RadioGroup>
-
-            <!-- Question 10 -->
-
-            <TextView
-                android:text="What subjects are hardest?"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
-
-            <EditText
-                android:id="@+id/hardSubjects"
-                android:hint="Example: Math, Chemistry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/submitSurvey"
-                android:text="Submit Survey"
-                android:layout_marginTop="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-    </ScrollView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Profile"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_streak"
+        android:title="Study Streak"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_calendar"
+        android:title="Calendar"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/menu_timer"
+        android:title="Study Timer"
+        app:showAsAction="never"/>
+
+</menu>

@@ -9,7 +9,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrindSmartApp">
         <activity
+            android:name=".CalendarActivty"
+            android:exported="false" />
+        <activity
+            android:name=".StreakActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimeActivity"
+            android:exported="false" />
+        <activity
             android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SurveyActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -3,80 +3,61 @@ package com.example.grindsmart;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioGroup;
-import android.widget.Toast;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SurveyActivity extends AppCompatActivity {
 
+    Spinner focusSpinner;
     Button submitSurvey;
-
-    CheckBox q5_phone, q5_friends, q5_games, q5_noise, q5_thoughts, q5_bored;
-
-    RadioGroup productiveGroup;
-    RadioGroup struggleGroup;
-    RadioGroup focusGroup;
-
-    EditText hardSubjects;
+    EditText nameInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
 
+        focusSpinner = findViewById(R.id.focusSpinner);
         submitSurvey = findViewById(R.id.submitSurvey);
+        nameInput = findViewById(R.id.nameInput);
 
-        q5_phone = findViewById(R.id.q5_phone);
-        q5_friends = findViewById(R.id.q5_friends);
-        q5_games = findViewById(R.id.q5_games);
-        q5_noise = findViewById(R.id.q5_noise);
-        q5_thoughts = findViewById(R.id.q5_thoughts);
-        q5_bored = findViewById(R.id.q5_bored);
 
-        productiveGroup = findViewById(R.id.productiveGroup);
-        struggleGroup = findViewById(R.id.struggleGroup);
-        focusGroup = findViewById(R.id.focusGroup);
 
-        hardSubjects = findViewById(R.id.hardSubjects);
+        String[] focusOptions = {
+                "10-15 minutes",
+                "20-30 minutes",
+                "45-60 minutes",
+                "Over an hour"
+        };
 
-        submitSurvey.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_dropdown_item,
+                focusOptions
+        );
 
-                SharedPreferences prefs = getSharedPreferences("GrindSmartData", MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
+        focusSpinner.setAdapter(adapter);
 
-                editor.putBoolean("phoneDistraction", q5_phone.isChecked());
-                editor.putBoolean("friendsDistraction", q5_friends.isChecked());
-                editor.putBoolean("gamesDistraction", q5_games.isChecked());
-                editor.putBoolean("noiseDistraction", q5_noise.isChecked());
-                editor.putBoolean("thoughtDistraction", q5_thoughts.isChecked());
-                editor.putBoolean("boredDistraction", q5_bored.isChecked());
 
-                int productiveID = productiveGroup.getCheckedRadioButtonId();
-                int struggleID = struggleGroup.getCheckedRadioButtonId();
-                int focusID = focusGroup.getCheckedRadioButtonId();
 
-                editor.putInt("productiveTime", productiveID);
-                editor.putInt("studyStruggle", struggleID);
-                editor.putInt("focusLength", focusID);
+        submitSurvey.setOnClickListener(v -> {
 
-                editor.putString("hardSubjects", hardSubjects.getText().toString());
+            SharedPreferences prefs = getSharedPreferences("GrindSmartData", MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
 
-                editor.apply();
+            editor.putString("focusTime", focusSpinner.getSelectedItem().toString());
 
-                Toast.makeText(SurveyActivity.this, "Survey Saved!", Toast.LENGTH_SHORT).show();
+            String name = nameInput.getText().toString();
+            editor.putString("userName", name);
 
-                Intent intent = new Intent(SurveyActivity.this, DashboardActivity.class);
-                startActivity(intent);
+            editor.apply();
 
-            }
+            Intent intent = new Intent(SurveyActivity.this, DashboardActivity.class);
+            startActivity(intent);
         });
-
     }
 }

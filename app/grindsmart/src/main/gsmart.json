@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "404412794099",
+    "project_id": "grindsmart-33a19",
+    "storage_bucket": "grindsmart-33a19.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404412794099:android:9ab7abc5231aea1ffae386",
+        "android_client_info": {
+          "package_name": "com.example.grindsmart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1cB1_qmWoJVGrDYSKCfxbpWgai93iUXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
